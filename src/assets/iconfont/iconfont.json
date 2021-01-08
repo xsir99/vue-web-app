@@ -1,0 +1,44 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1137795",
+      "name": "交易",
+      "font_class": "jiaoyi",
+      "unicode": "e67f",
+      "unicode_decimal": 59007
+    },
+    {
+      "icon_id": "5771110",
+      "name": "我的",
+      "font_class": "My",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "11124956",
+      "name": "首页",
+      "font_class": "1",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "14045926",
+      "name": "日志系统",
+      "font_class": "rizhixitong",
+      "unicode": "e661",
+      "unicode_decimal": 58977
+    },
+    {
+      "icon_id": "15995902",
+      "name": "资讯",
+      "font_class": "zixun",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    }
+  ]
+}

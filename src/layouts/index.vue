@@ -21,23 +21,23 @@ export default {
       selectedLabelDefault: 'main',
       tabs: [{
         label: '首页',
-        icon: 'cubeic-home',
+        icon: 'iconfont icon-1  ',
         value: 'main'
       }, {
         label: '交易',
-        icon: 'cubeic-like',
+        icon: 'iconfont icon-jiaoyi',
         value: 'trade',
       }, {
         label: '日志',
-        icon: 'cubeic-calendar',
+        icon: 'iconfont icon-rizhixitong',
         value: 'log',
       }, {
         label: '资讯',
-        icon: 'cubeic-person',
+        icon: 'iconfont icon-zixun',
         value: 'info',
       }, {
         label: '我的',
-        icon: 'cubeic-person',
+        icon: 'iconfont icon-My',
         value: 'mine'
       }]
     }
@@ -74,4 +74,7 @@ export default {
   z-index 999
 
 }
+  .icon1 {
+    background-image url("~_assets/icon/home/icon1.png")
+  }
 </style>

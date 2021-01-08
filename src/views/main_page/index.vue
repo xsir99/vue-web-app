@@ -17,7 +17,7 @@
         <cube-slide ref="slide" :data="items" direction="vertical" :showDots="false">
           <cube-slide-item v-for="(item, index) in items" :key="index" @click.native="clickHandler(item, index)">
             <div class="notice-font">
-              <p>你好吗!!!aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!</p>
+              <p>重要通知！！</p>
             </div>
           </cube-slide-item>
         </cube-slide>
@@ -41,9 +41,24 @@
         </div>
         <div class="button">
           <div class="card">
-            <div class="card-api"></div>
-            <div class="card-bill"></div>
+            <div class="card-api">
+              <p>API授权</p>
+              <p>快捷一键办理</p>
+            </div>
+            <div class="card-bill">
+              <p>电子账单</p>
+              <p>急速查询 轻松知晓</p>
+            </div>
           </div>
+        </div>
+        <div id="coin-tab">
+          <cube-tab-bar
+              v-model="selectedLabelDefault"
+              show-slider
+              :data="tabs"
+              @change="changeTabHandler">
+          </cube-tab-bar>
+
         </div>
         <!--  下拉刷新  需要加上:cube-pulldown-wrapper  定位下拉盒子内容在content顶部 :style="pullDownStyle" -->
         <template slot="pulldown" slot-scope="props">
@@ -80,6 +95,18 @@ export default {
   name: "index",
   data() {
     return {
+      selectedLabelDefault: 'huobi',
+      tabs: [{
+        label: '火币',
+        value: 'huobi',
+      }, {
+        label: 'Biance',
+      }, {
+        label: 'OKEx',
+      }, {
+        label: '比特儿',
+      }],
+
       /* options 参数配置参考better-scroll 的官网*/
       items: [1, 2, 3],
       options: {
@@ -105,6 +132,9 @@ export default {
   computed: {},
 
   methods: {
+    changeTabHandler(value) {
+      console.log(value)
+    },
     onPullingDown() {
       console.log("pull down!!!!")
       setTimeout(() => {
@@ -124,7 +154,7 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 .container {
   width 100%
   height 100%
@@ -254,10 +284,11 @@ export default {
   }
 }
 
-.button{
+.button {
   display flex
   position: relative;
 }
+
 .card {
   width 100%
   margin: 17px 18px;
@@ -274,6 +305,24 @@ export default {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url('~_assets/api.jpg')
+    position relative
+    p {
+      position absolute
+      margin-left 15px
+      color #fff
+      &:first-child{
+        top 16px
+        line-height 30px;
+        font-size 16px
+        font-weight 800
+      }
+      &:last-child{
+        top 50px
+        font-size 12px
+        opacity 0.7
+      }
+    }
+
 
 
   }
@@ -285,7 +334,45 @@ export default {
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-image: url('~_assets/api.jpg')
+    position relative
+    p {
+      position absolute
+      margin-left 15px
+      color #fff
+      &:first-child{
+        top 16px
+        line-height 30px;
+        font-size 16px
+        font-weight 800
+      }
+      &:last-child{
+        top 50px
+        font-size 12px
+        opacity 0.7
+      }
+    }
 
+  }
+}
+</style>
+
+<style lang="stylus">
+
+#coin-tab {
+  .cube-tab {
+    padding-bottom: 15px;
+    div {
+      font-weight 800
+      font-size 16px
+    }
+  }
+  .cube-tab_active {
+    color #0078ff
+
+    div {
+      font-weight 800
+      font-size 16px
+    }
   }
 }
 </style>
